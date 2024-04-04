@@ -37,7 +37,11 @@ function RotationPanel() {
 
   return (
     <div className="grid-column">
-      <StackContainer title="Rotation" subtitle={activeAircraft?.ident}>
+      <StackContainer
+        title="Rotation"
+        subtitle={activeAircraft?.ident}
+        className="h-[800px] lg:h-[73vh]"
+      >
         <AnimatePresence>
           {activeAircraft?.rotation.length ? (
             activeAircraft.rotation.map((f) => (

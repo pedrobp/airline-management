@@ -31,7 +31,7 @@ function FlightsPanel() {
         <CircleHelp className="text-secondary tt-flights" size={16} />
       </div>
 
-      <div className="h-[925px] overflow-auto grid-column">
+      <div className="h-[800px] overflow-auto grid-column lg:h-[75vh]">
         {sortedFlights.map((f) => (
           <Card
             key={f.ident}

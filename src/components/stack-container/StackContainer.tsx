@@ -1,18 +1,21 @@
+import clsx from "clsx";
 import { PropsWithChildren } from "react";
 
 interface Props {
   title: string;
   subtitle?: string;
   borderless?: boolean;
+  className?: string;
 }
 
 function StackContainer({
   title,
   subtitle,
+  className,
   children,
 }: PropsWithChildren<Props>) {
   return (
-    <div className="container-layout h-[875px]">
+    <div className={clsx("container-layout", className)}>
       <div className="flex">
         <div className="flex-1">
           <h1>{title}</h1>

@@ -15,7 +15,7 @@ function AircraftPanel() {
         <CircleHelp className="text-secondary tt-aircraft" size={16} />
       </div>
 
-      <div className="h-[925px] overflow-auto grid-column">
+      <div className="h-[800px] overflow-auto grid-column lg:h-[75vh]">
         {aircraft.map((a) => {
           const aircraftRotation = (rotation[a.ident] || []).map(
             (id) => flights.find((f) => f.ident === id)!
