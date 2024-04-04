@@ -40,7 +40,7 @@ function RotationPanel() {
       <StackContainer
         title="Rotation"
         subtitle={activeAircraft?.ident}
-        className="h-[800px] lg:h-[73vh]"
+        className="h-[800px] xl:h-[73vh]"
       >
         <AnimatePresence>
           {activeAircraft?.rotation.length ? (

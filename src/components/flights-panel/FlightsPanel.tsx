@@ -26,12 +26,12 @@ function FlightsPanel() {
 
   return (
     <div className="grid-column">
-      <div className="flex justify-center lg:pt-6 items-center gap-2">
+      <div className="flex justify-center xl:pt-6 items-center gap-2">
         <h1>Flights</h1>
         <CircleHelp className="text-secondary tt-flights" size={16} />
       </div>
 
-      <div className="h-[800px] overflow-auto grid-column lg:h-[75vh]">
+      <div className="h-[800px] overflow-auto grid-column xl:h-[75vh]">
         {sortedFlights.map((f) => (
           <Card
             key={f.ident}

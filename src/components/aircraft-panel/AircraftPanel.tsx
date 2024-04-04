@@ -10,12 +10,12 @@ function AircraftPanel() {
 
   return (
     <div className="grid-column">
-      <div className="flex justify-center lg:pt-6 items-center gap-2">
+      <div className="flex justify-center xl:pt-6 items-center gap-2">
         <h1>Aircraft</h1>
         <CircleHelp className="text-secondary tt-aircraft" size={16} />
       </div>
 
-      <div className="h-[800px] overflow-auto grid-column lg:h-[75vh]">
+      <div className="h-[800px] overflow-auto grid-column xl:h-[75vh]">
         {aircraft.map((a) => {
           const aircraftRotation = (rotation[a.ident] || []).map(
             (id) => flights.find((f) => f.ident === id)!

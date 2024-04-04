@@ -31,11 +31,11 @@ ul {
 }
 
 .container-layout {
-  @apply border border-border shadow-md px-4 py-3 lg:px-8 lg:py-6 flex flex-col gap-6 rounded-md;
+  @apply border border-border shadow-md px-4 py-3 xl:px-8 xl:py-6 flex flex-col gap-6 rounded-md;
 }
 
 .main-grid {
-  @apply grid grid-cols-1 gap-10 lg:p-10 w-full max-w-[550px] xl:max-w-none xl:grid-cols-[minmax(410px,_475px)_minmax(450px,_525px)_minmax(410px,_475px)] place-content-center;
+  @apply grid grid-cols-1 gap-10 xl:p-10 w-full max-w-[550px] xl:max-w-none xl:grid-cols-[minmax(410px,_475px)_minmax(450px,_525px)_minmax(410px,_475px)] place-content-center;
 }
 
 .grid-column {
