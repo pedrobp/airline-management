@@ -1,6 +1,6 @@
-import { X } from "lucide-react";
-import { Button, Modal } from "..";
-import { Flight } from "../../types";
+import { X } from 'lucide-react';
+import { Button, Modal } from '..';
+import { Flight } from '../../types';
 
 interface Props {
   flightToRemove: Flight | null;
@@ -17,7 +17,7 @@ function RemoveModal({
 }: Props) {
   return (
     <Modal open={!!flightToRemove} onClose={onClose}>
-      <div className="bg-white bg-opacity-100 rounded-md p-6 flex flex-col gap-4 drop-shadow-lg max-w-[400px]">
+      <div className="bg-white bg-opacity-100 rounded-md p-6 flex flex-col gap-4 drop-shadow-lg max-w-[300px] xl:max-w-[400px]">
         <div className="flex items-center">
           <span className="flex-1 font-bold text-primary text-lg">
             Attention
@@ -29,7 +29,7 @@ function RemoveModal({
         </div>
 
         <span className="text-primary text-lg">
-          Are you sure you want to remove the flight{" "}
+          Are you sure you want to remove the flight{' '}
           <b>{flightToRemove?.ident}</b> from the rotation?
         </span>
 

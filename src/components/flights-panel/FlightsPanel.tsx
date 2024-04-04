@@ -1,8 +1,8 @@
-import { CircleHelp } from "lucide-react";
-import { Card, FlightCardContent } from "..";
-import { useAircraftManagement } from "../../hooks/useAircraftManagement";
-import { useMemo } from "react";
-import { Tooltip } from "react-tooltip";
+import { CircleHelp } from 'lucide-react';
+import { Card, FlightCardContent } from '..';
+import { useAircraftManagement } from '../../hooks/useAircraftManagement';
+import { useMemo } from 'react';
+import { Tooltip } from 'react-tooltip';
 
 function FlightsPanel() {
   const { flights, addFlight, canAddFlight } = useAircraftManagement();
@@ -31,7 +31,7 @@ function FlightsPanel() {
         <CircleHelp className="text-secondary tt-flights" size={16} />
       </div>
 
-      <div className="h-[800px] overflow-auto grid-column xl:h-[75vh]">
+      <div className="scrollable-container">
         {sortedFlights.map((f) => (
           <Card
             key={f.ident}

@@ -1,8 +1,8 @@
-import { Tooltip } from "react-tooltip";
-import { Card } from "..";
-import { TURNAROUND_TIME, DAY_IN_SECONDS } from "../../context";
-import { useAircraftManagement } from "../../hooks/useAircraftManagement";
-import { CircleHelp } from "lucide-react";
+import { Tooltip } from 'react-tooltip';
+import { Card } from '..';
+import { TURNAROUND_TIME, DAY_IN_SECONDS } from '../../context';
+import { useAircraftManagement } from '../../hooks/useAircraftManagement';
+import { CircleHelp } from 'lucide-react';
 
 function AircraftPanel() {
   const { aircraft, setActiveAircraftId, activeAircraft, rotation, flights } =
@@ -15,7 +15,7 @@ function AircraftPanel() {
         <CircleHelp className="text-secondary tt-aircraft" size={16} />
       </div>
 
-      <div className="h-[800px] overflow-auto grid-column xl:h-[75vh]">
+      <div className="scrollable-container">
         {aircraft.map((a) => {
           const aircraftRotation = (rotation[a.ident] || []).map(
             (id) => flights.find((f) => f.ident === id)!
@@ -35,7 +35,7 @@ function AircraftPanel() {
               key={a.ident}
               title={a.ident}
               subtitle={
-                a.type === "A320" ? (
+                a.type === 'A320' ? (
                   <img width={74} height={20} src="./a320.png" />
                 ) : (
                   a.type

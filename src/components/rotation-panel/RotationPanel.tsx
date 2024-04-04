@@ -1,10 +1,10 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { Card, FlightCardContent, StackContainer } from "..";
-import { useAircraftManagement } from "../../hooks/useAircraftManagement";
-import AircraftTimeline from "./AircraftTimeline";
-import { useCallback, useMemo, useState } from "react";
-import { Flight } from "../../types";
-import RemoveModal from "./RemoveModal";
+import { AnimatePresence, motion } from 'framer-motion';
+import { Card, FlightCardContent, StackContainer } from '..';
+import { useAircraftManagement } from '../../hooks/useAircraftManagement';
+import AircraftTimeline from './AircraftTimeline';
+import { useCallback, useMemo, useState } from 'react';
+import { Flight } from '../../types';
+import RemoveModal from './RemoveModal';
 
 const INITIAL_ANIMATION = { opacity: 0, y: -25 };
 
@@ -40,7 +40,7 @@ function RotationPanel() {
       <StackContainer
         title="Rotation"
         subtitle={activeAircraft?.ident}
-        className="h-[800px] xl:h-[73vh]"
+        className="h-[600px] xl:h-[73vh]"
       >
         <AnimatePresence>
           {activeAircraft?.rotation.length ? (
