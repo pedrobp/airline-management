@@ -2,7 +2,7 @@
 
 This project is a single page application with the goal of managing an airline's fleet and each aircraft's flight rotation.
 
-The page consists of 3 columns: on the left, a list of all the available aircraft on the fleet; in the middle, the scheduled flight rotation for the selected aircraft and the aircraft's timeline; on the right, a list of all flights, whether they're available or not.
+The page consists of 3 columns: on the left, a list of all the available aircraft on the fleet; in the middle, the scheduled flight rotation for the selected aircraft and the aircraft's timeline; on the right, a list of all flights, whether they're available or not (unavailable flights become disabled).
 
 Data was fetched from the provided endpoints.
 
