@@ -12,7 +12,9 @@ function AircraftTimeline() {
         <span className="absolute right-0 -top-4 ">00:00</span>
 
         {activeAircraft?.rotation.map((f) => {
+          // Calculates the percentage of the day the flight takes, to determine the bar "width"
           const widthPercentage = ((f.arrivaltime - f.departuretime) / DAY_IN_SECONDS) * 100
+          // Calculates the percentage of the day that is before the departure, to determine the bar "left"
           const leftPercentage = (f.departuretime / DAY_IN_SECONDS) * 100
           return (
             <div

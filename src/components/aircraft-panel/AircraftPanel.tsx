@@ -16,12 +16,15 @@ function AircraftPanel() {
 
       <div className="scrollable-container">
         {aircraft.map((a) => {
+          // Gets the rotation for the current iteration aircraft
           const aircraftRotation = (rotation[a.ident] || []).map((id) => flights.find((f) => f.ident === id)!)
 
           let flightTime = 0
 
+          // For each rotation flight, calculates how many seconds it takes and adds to the flightTime variable
           aircraftRotation.forEach((f) => (flightTime += f.arrivaltime - f.departuretime + TURNAROUND_TIME))
 
+          // Calculates the percentage of the day that the aircraft is busy
           const percentage = (flightTime / DAY_IN_SECONDS) * 100
 
           return (

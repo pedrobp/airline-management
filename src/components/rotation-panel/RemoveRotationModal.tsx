@@ -9,7 +9,7 @@ interface Props {
   onConfirm: () => void
 }
 
-function RemoveModal({ flightToRemove, subsequentialFlights, onClose, onConfirm }: Props) {
+function RemoveRotationModal({ flightToRemove, subsequentialFlights, onClose, onConfirm }: Props) {
   return (
     <Modal open={!!flightToRemove} onClose={onClose}>
       <div className="bg-white bg-opacity-100 rounded-md p-6 flex flex-col gap-4 drop-shadow-lg max-w-[300px] xl:max-w-[400px]">
@@ -48,4 +48,4 @@ function RemoveModal({ flightToRemove, subsequentialFlights, onClose, onConfirm 
   )
 }
 
-export default RemoveModal
+export default RemoveRotationModal

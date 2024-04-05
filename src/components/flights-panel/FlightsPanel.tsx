@@ -9,12 +9,15 @@ function FlightsPanel() {
 
   const sortedFlights = useMemo(
     () =>
+      // Sorts the flights for the convenience of the user
       flights.sort((a, b) => {
+        // This function determines if a flight can be added to the rotation,
+        // based on time, airport and flight availability
         const availableA = canAddFlight(a) ? 0 : 1
         const availableB = canAddFlight(b) ? 0 : 1
 
         if (availableA !== availableB) {
-          // Prioritize availability
+          // Prioritize availability, so that flights that can be added appear at the top
           return availableA - availableB
         } else {
           // If both flights are either available or unavailable, sort by departure time

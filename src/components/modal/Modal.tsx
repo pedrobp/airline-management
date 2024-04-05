@@ -10,6 +10,7 @@ interface Props {
 function Modal({ open, onClose, children }: PropsWithChildren<Props>) {
   const ref = useRef<HTMLDivElement>(null)
 
+  // When user clicks outside of the modal content, it calls onClose
   useOnClickOutside(ref, onClose)
 
   return (

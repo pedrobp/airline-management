@@ -3,6 +3,7 @@ import { Aircraft, Flight } from '../types'
 
 const API_URL = 'https://recruiting-assessment.alphasights.com/api'
 
+// Hook responsible for fetching the data from the flights/aircraft endpoints
 const useInitialData = () => {
   const [aircraft, setAircraft] = useState<Aircraft[]>([])
   const [flights, setFlights] = useState<Flight[]>([])
@@ -12,16 +13,22 @@ const useInitialData = () => {
     setIsLoading(true)
 
     const fetchData = async () => {
+      let error = false
       await fetch(`${API_URL}/aircrafts`)
         .then((r) => r.json())
         .then((data) => setAircraft(data))
-        .catch(() => alert('Error fetching list of aircraft. Please refresh the page.'))
+        .catch(() => {
+          error = true
+        })
 
       await fetch(`${API_URL}/flights`)
         .then((r) => r.json())
         .then((data) => setFlights(data))
-        .catch(() => alert('Error fetching list of flights. Please refresh the page.'))
+        .catch(() => {
+          error = true
+        })
 
+      if (error) alert('Error fetching list of aircraft/flights. Please refresh the page.')
       setIsLoading(false)
     }
 

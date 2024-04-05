@@ -4,7 +4,7 @@ import { useAircraftManagement } from '../../hooks/useAircraftManagement'
 import AircraftTimeline from './AircraftTimeline'
 import { useCallback, useMemo, useState } from 'react'
 import { Flight } from '../../types'
-import RemoveModal from './RemoveModal'
+import RemoveRotationModal from './RemoveRotationModal'
 
 const INITIAL_ANIMATION = { opacity: 0, y: -25 }
 
@@ -59,7 +59,7 @@ function RotationPanel() {
 
       <AircraftTimeline />
 
-      <RemoveModal
+      <RemoveRotationModal
         flightToRemove={flightToRemove}
         subsequentialFlights={subsequentialFlights}
         onClose={() => setFlightToRemove(null)}
