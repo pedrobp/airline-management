@@ -4,6 +4,8 @@ This project is a single page application with the goal of managing an airline's
 
 The page consists of 3 columns: on the left, a list of all the available aircraft on the fleet; in the middle, the scheduled flight rotation for the selected aircraft and the aircraft's timeline; on the right, a list of all flights, whether they're available or not (unavailable flights become disabled).
 
+To access the deployed application, click [here](https://airline-management.netlify.app/).
+
 Here's a preview of the page:
 
 ![Preview](./public/am-preview.png)
