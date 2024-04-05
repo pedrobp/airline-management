@@ -1,12 +1,12 @@
-import { X } from 'lucide-react';
-import { Button, Modal } from '..';
-import { Flight } from '../../types';
+import { X } from 'lucide-react'
+import { Button, Modal } from '..'
+import { Flight } from '../../types'
 
 interface Props {
-  flightToRemove: Flight | null;
-  subsequentialFlights: Flight[];
-  onClose: () => void;
-  onConfirm: () => void;
+  flightToRemove: Flight | null
+  subsequentialFlights: Flight[]
+  onClose: () => void
+  onConfirm: () => void
 }
 
 function RemoveModal({ flightToRemove, subsequentialFlights, onClose, onConfirm }: Props) {
@@ -45,7 +45,7 @@ function RemoveModal({ flightToRemove, subsequentialFlights, onClose, onConfirm 
         </div>
       </div>
     </Modal>
-  );
+  )
 }
 
-export default RemoveModal;
+export default RemoveModal

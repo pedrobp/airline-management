@@ -1,8 +1,8 @@
-import { DAY_IN_SECONDS } from '../../context';
-import { useAircraftManagement } from '../../hooks/useAircraftManagement';
+import { DAY_IN_SECONDS } from '../../context'
+import { useAircraftManagement } from '../../hooks/useAircraftManagement'
 
 function AircraftTimeline() {
-  const { activeAircraft } = useAircraftManagement();
+  const { activeAircraft } = useAircraftManagement()
 
   return (
     <div className="flex flex-col gap-2 pt-8">
@@ -12,8 +12,8 @@ function AircraftTimeline() {
         <span className="absolute right-0 -top-4 ">00:00</span>
 
         {activeAircraft?.rotation.map((f) => {
-          const widthPercentage = ((f.arrivaltime - f.departuretime) / DAY_IN_SECONDS) * 100;
-          const leftPercentage = (f.departuretime / DAY_IN_SECONDS) * 100;
+          const widthPercentage = ((f.arrivaltime - f.departuretime) / DAY_IN_SECONDS) * 100
+          const leftPercentage = (f.departuretime / DAY_IN_SECONDS) * 100
           return (
             <div
               key={f.ident}
@@ -31,7 +31,7 @@ function AircraftTimeline() {
                 }}
               />
             </div>
-          );
+          )
         })}
       </div>
 
@@ -50,7 +50,7 @@ function AircraftTimeline() {
         </span>
       </div>
     </div>
-  );
+  )
 }
 
-export default AircraftTimeline;
+export default AircraftTimeline

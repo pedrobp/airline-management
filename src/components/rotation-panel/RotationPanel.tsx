@@ -1,31 +1,31 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import { Card, FlightCardContent } from '..';
-import { useAircraftManagement } from '../../hooks/useAircraftManagement';
-import AircraftTimeline from './AircraftTimeline';
-import { useCallback, useMemo, useState } from 'react';
-import { Flight } from '../../types';
-import RemoveModal from './RemoveModal';
+import { AnimatePresence, motion } from 'framer-motion'
+import { Card, FlightCardContent } from '..'
+import { useAircraftManagement } from '../../hooks/useAircraftManagement'
+import AircraftTimeline from './AircraftTimeline'
+import { useCallback, useMemo, useState } from 'react'
+import { Flight } from '../../types'
+import RemoveModal from './RemoveModal'
 
-const INITIAL_ANIMATION = { opacity: 0, y: -25 };
+const INITIAL_ANIMATION = { opacity: 0, y: -25 }
 
 function RotationPanel() {
-  const { activeAircraft, removeFlights } = useAircraftManagement();
+  const { activeAircraft, removeFlights } = useAircraftManagement()
 
-  const [flightToRemove, setFlightToRemove] = useState<Flight | null>(null);
+  const [flightToRemove, setFlightToRemove] = useState<Flight | null>(null)
 
   const subsequentialFlights = useMemo(() => {
-    if (!activeAircraft) return [];
+    if (!activeAircraft) return []
 
-    const removedFlightIndex = activeAircraft.rotation.findIndex((f) => flightToRemove?.ident === f.ident);
-    return activeAircraft.rotation.slice(removedFlightIndex + 1, activeAircraft.rotation.length);
-  }, [activeAircraft, flightToRemove?.ident]);
+    const removedFlightIndex = activeAircraft.rotation.findIndex((f) => flightToRemove?.ident === f.ident)
+    return activeAircraft.rotation.slice(removedFlightIndex + 1, activeAircraft.rotation.length)
+  }, [activeAircraft, flightToRemove?.ident])
 
   const handleConfirm = useCallback(() => {
-    if (!flightToRemove) return;
+    if (!flightToRemove) return
 
-    removeFlights([flightToRemove.ident, ...subsequentialFlights.map((f) => f.ident)]);
-    setFlightToRemove(null);
-  }, [flightToRemove, removeFlights, subsequentialFlights]);
+    removeFlights([flightToRemove.ident, ...subsequentialFlights.map((f) => f.ident)])
+    setFlightToRemove(null)
+  }, [flightToRemove, removeFlights, subsequentialFlights])
 
   return (
     <div className="grid-column">
@@ -66,7 +66,7 @@ function RotationPanel() {
         onConfirm={handleConfirm}
       />
     </div>
-  );
+  )
 }
 
-export default RotationPanel;
+export default RotationPanel

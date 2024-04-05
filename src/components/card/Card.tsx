@@ -1,12 +1,12 @@
-import { PropsWithChildren, ReactNode } from 'react';
-import clsx from 'clsx';
+import { PropsWithChildren, ReactNode } from 'react'
+import clsx from 'clsx'
 
 interface Props {
-  title: string;
-  subtitle?: ReactNode;
-  disabled?: boolean;
-  selected?: boolean;
-  onClick?: () => void;
+  title: string
+  subtitle?: ReactNode
+  disabled?: boolean
+  selected?: boolean
+  onClick?: () => void
 }
 
 function Card({ title, subtitle, disabled = false, selected, onClick, children }: PropsWithChildren<Props>) {
@@ -30,7 +30,7 @@ function Card({ title, subtitle, disabled = false, selected, onClick, children }
 
       {selected && <div className={clsx('absolute w-[5px] top-0 left-0 bottom-0 rounded-l-md bg-accent')} />}
     </div>
-  );
+  )
 }
 
-export default Card;
+export default Card

@@ -1,28 +1,28 @@
-import { CircleHelp } from 'lucide-react';
-import { Card, FlightCardContent } from '..';
-import { useAircraftManagement } from '../../hooks/useAircraftManagement';
-import { useMemo } from 'react';
-import { Tooltip } from 'react-tooltip';
+import { CircleHelp } from 'lucide-react'
+import { Card, FlightCardContent } from '..'
+import { useAircraftManagement } from '../../hooks/useAircraftManagement'
+import { useMemo } from 'react'
+import { Tooltip } from 'react-tooltip'
 
 function FlightsPanel() {
-  const { flights, addFlight, canAddFlight } = useAircraftManagement();
+  const { flights, addFlight, canAddFlight } = useAircraftManagement()
 
   const sortedFlights = useMemo(
     () =>
       flights.sort((a, b) => {
-        const availableA = canAddFlight(a) ? 0 : 1;
-        const availableB = canAddFlight(b) ? 0 : 1;
+        const availableA = canAddFlight(a) ? 0 : 1
+        const availableB = canAddFlight(b) ? 0 : 1
 
         if (availableA !== availableB) {
           // Prioritize availability
-          return availableA - availableB;
+          return availableA - availableB
         } else {
           // If both flights are either available or unavailable, sort by departure time
-          return a.departuretime - b.departuretime;
+          return a.departuretime - b.departuretime
         }
       }),
     [canAddFlight, flights],
-  );
+  )
 
   return (
     <div className="grid-column">
@@ -48,7 +48,7 @@ function FlightsPanel() {
         Unavailable flights (due to time, airport or aircraft constraints) are disabled.
       </Tooltip>
     </div>
-  );
+  )
 }
 
-export default FlightsPanel;
+export default FlightsPanel

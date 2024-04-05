@@ -15,7 +15,7 @@ function Spinner() {
         />
       </svg>
     </div>
-  );
+  )
 }
 
-export default Spinner;
+export default Spinner

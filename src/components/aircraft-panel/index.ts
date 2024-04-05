@@ -1,1 +1,1 @@
-export { default as AircraftPanel } from './AircraftPanel';
+export { default as AircraftPanel } from './AircraftPanel'

@@ -1,8 +1,8 @@
-import clsx from 'clsx';
-import { ButtonHTMLAttributes, PropsWithChildren } from 'react';
+import clsx from 'clsx'
+import { ButtonHTMLAttributes, PropsWithChildren } from 'react'
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'icon' | 'secondary';
+  variant?: 'primary' | 'icon' | 'secondary'
 }
 
 function Button({ variant = 'primary', children, ...props }: PropsWithChildren<Props>) {
@@ -21,7 +21,7 @@ function Button({ variant = 'primary', children, ...props }: PropsWithChildren<P
     >
       {children}
     </button>
-  );
+  )
 }
 
-export default Button;
+export default Button

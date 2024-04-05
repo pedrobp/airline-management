@@ -1,11 +1,11 @@
-import { Tooltip } from 'react-tooltip';
-import { Card } from '..';
-import { TURNAROUND_TIME, DAY_IN_SECONDS } from '../../context';
-import { useAircraftManagement } from '../../hooks/useAircraftManagement';
-import { CircleHelp } from 'lucide-react';
+import { Tooltip } from 'react-tooltip'
+import { Card } from '..'
+import { TURNAROUND_TIME, DAY_IN_SECONDS } from '../../context'
+import { useAircraftManagement } from '../../hooks/useAircraftManagement'
+import { CircleHelp } from 'lucide-react'
 
 function AircraftPanel() {
-  const { aircraft, setActiveAircraftId, activeAircraft, rotation, flights } = useAircraftManagement();
+  const { aircraft, setActiveAircraftId, activeAircraft, rotation, flights } = useAircraftManagement()
 
   return (
     <div className="grid-column">
@@ -16,13 +16,13 @@ function AircraftPanel() {
 
       <div className="scrollable-container">
         {aircraft.map((a) => {
-          const aircraftRotation = (rotation[a.ident] || []).map((id) => flights.find((f) => f.ident === id)!);
+          const aircraftRotation = (rotation[a.ident] || []).map((id) => flights.find((f) => f.ident === id)!)
 
-          let flightTime = 0;
+          let flightTime = 0
 
-          aircraftRotation.forEach((f) => (flightTime += f.arrivaltime - f.departuretime + TURNAROUND_TIME));
+          aircraftRotation.forEach((f) => (flightTime += f.arrivaltime - f.departuretime + TURNAROUND_TIME))
 
-          const percentage = (flightTime / DAY_IN_SECONDS) * 100;
+          const percentage = (flightTime / DAY_IN_SECONDS) * 100
 
           return (
             <Card
@@ -40,7 +40,7 @@ function AircraftPanel() {
                 <h3 className="text-white absolute left-2 top-1/2 -translate-y-1/2">{Math.round(percentage)}%</h3>
               </div>
             </Card>
-          );
+          )
         })}
       </div>
 
@@ -50,7 +50,7 @@ function AircraftPanel() {
         Click on an aircraft to see or change it's rotation.
       </Tooltip>
     </div>
-  );
+  )
 }
 
-export default AircraftPanel;
+export default AircraftPanel

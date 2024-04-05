@@ -1,8 +1,8 @@
-import { PlaneTakeoff, MoveRight, PlaneLanding } from 'lucide-react';
-import { Flight } from '../../types';
+import { PlaneTakeoff, MoveRight, PlaneLanding } from 'lucide-react'
+import { Flight } from '../../types'
 
 interface Props {
-  flight: Flight;
+  flight: Flight
 }
 
 function FlightCardContent({ flight }: Props) {
@@ -30,6 +30,6 @@ function FlightCardContent({ flight }: Props) {
         <PlaneLanding strokeWidth={1.5} size={30} className="text-secondary self-center" />
       </div>
     </div>
-  );
+  )
 }
-export default FlightCardContent;
+export default FlightCardContent

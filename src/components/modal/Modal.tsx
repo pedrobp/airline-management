@@ -1,16 +1,16 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import { PropsWithChildren, useRef } from 'react';
-import { useOnClickOutside } from 'usehooks-ts';
+import { AnimatePresence, motion } from 'framer-motion'
+import { PropsWithChildren, useRef } from 'react'
+import { useOnClickOutside } from 'usehooks-ts'
 
 interface Props {
-  open: boolean;
-  onClose: () => void;
+  open: boolean
+  onClose: () => void
 }
 
 function Modal({ open, onClose, children }: PropsWithChildren<Props>) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null)
 
-  useOnClickOutside(ref, onClose);
+  useOnClickOutside(ref, onClose)
 
   return (
     <AnimatePresence>
@@ -26,7 +26,7 @@ function Modal({ open, onClose, children }: PropsWithChildren<Props>) {
         </motion.div>
       )}
     </AnimatePresence>
-  );
+  )
 }
 
-export default Modal;
+export default Modal
