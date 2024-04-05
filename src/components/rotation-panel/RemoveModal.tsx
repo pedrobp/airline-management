@@ -9,19 +9,12 @@ interface Props {
   onConfirm: () => void;
 }
 
-function RemoveModal({
-  flightToRemove,
-  subsequentialFlights,
-  onClose,
-  onConfirm,
-}: Props) {
+function RemoveModal({ flightToRemove, subsequentialFlights, onClose, onConfirm }: Props) {
   return (
     <Modal open={!!flightToRemove} onClose={onClose}>
       <div className="bg-white bg-opacity-100 rounded-md p-6 flex flex-col gap-4 drop-shadow-lg max-w-[300px] xl:max-w-[400px]">
         <div className="flex items-center">
-          <span className="flex-1 font-bold text-primary text-lg">
-            Attention
-          </span>
+          <span className="flex-1 font-bold text-primary text-lg">Attention</span>
 
           <Button variant="icon" onClick={onClose}>
             <X size={18} />
@@ -29,15 +22,12 @@ function RemoveModal({
         </div>
 
         <span className="text-primary text-lg">
-          Are you sure you want to remove the flight{' '}
-          <b>{flightToRemove?.ident}</b> from the rotation?
+          Are you sure you want to remove the flight <b>{flightToRemove?.ident}</b> from the rotation?
         </span>
 
         {!!subsequentialFlights.length && (
           <div className="flex flex-col gap-1 text-sm text-secondary">
-            <span>
-              This will cause the subsequential flights to also be removed:
-            </span>
+            <span>This will cause the subsequential flights to also be removed:</span>
 
             <ul className="ml-5">
               {subsequentialFlights.map((f) => (

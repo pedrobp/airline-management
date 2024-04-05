@@ -21,24 +21,19 @@ function FlightsPanel() {
           return a.departuretime - b.departuretime;
         }
       }),
-    [canAddFlight, flights]
+    [canAddFlight, flights],
   );
 
   return (
     <div className="grid-column">
-      <div className="flex justify-center xl:pt-6 items-center gap-2">
+      <div className="grid-column-title">
         <h1>Flights</h1>
         <CircleHelp className="text-secondary tt-flights" size={16} />
       </div>
 
       <div className="scrollable-container">
         {sortedFlights.map((f) => (
-          <Card
-            key={f.ident}
-            title={f.ident}
-            onClick={() => addFlight(f.ident)}
-            disabled={!canAddFlight(f)}
-          >
+          <Card key={f.ident} title={f.ident} onClick={() => addFlight(f.ident)} disabled={!canAddFlight(f)}>
             <FlightCardContent flight={f} />
           </Card>
         ))}
@@ -50,8 +45,7 @@ function FlightsPanel() {
         1. Availability <br />
         2. Departure Time <br />
         Click on a flight to add it to the current rotation. <br />
-        Unavailable flights (due to time, airport or aircraft constraints) are
-        disabled.
+        Unavailable flights (due to time, airport or aircraft constraints) are disabled.
       </Tooltip>
     </div>
   );

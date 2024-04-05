@@ -1,5 +1,5 @@
-import { createContext } from "react";
-import { Aircraft, Flight, Rotation } from "../../types";
+import { createContext } from 'react';
+import { Aircraft, Flight, Rotation } from '../../types';
 
 interface Context {
   aircraft: Aircraft[];

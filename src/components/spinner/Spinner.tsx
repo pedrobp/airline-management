@@ -1,11 +1,7 @@
 function Spinner() {
   return (
     <div className="flex items-center justify-center h-[calc(100vh_-_50px)] w-full">
-      <svg
-        viewBox="0 0 800 800"
-        xmlns="http://www.w3.org/2000/svg"
-        className="animate-spin w-20 h-20"
-      >
+      <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" className="animate-spin w-20 h-20">
         <circle
           cx="400"
           cy="400"

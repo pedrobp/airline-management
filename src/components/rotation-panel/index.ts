@@ -1,1 +1,1 @@
-export { default as RotationPanel } from "./RotationPanel";
+export { default as RotationPanel } from './RotationPanel';

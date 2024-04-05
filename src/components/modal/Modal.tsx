@@ -1,6 +1,6 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { PropsWithChildren, useRef } from "react";
-import { useOnClickOutside } from "usehooks-ts";
+import { AnimatePresence, motion } from 'framer-motion';
+import { PropsWithChildren, useRef } from 'react';
+import { useOnClickOutside } from 'usehooks-ts';
 
 interface Props {
   open: boolean;

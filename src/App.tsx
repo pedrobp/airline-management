@@ -1,10 +1,5 @@
 import { addDays, format } from 'date-fns';
-import {
-  AircraftPanel,
-  FlightsPanel,
-  RotationPanel,
-  Spinner,
-} from './components';
+import { AircraftPanel, FlightsPanel, RotationPanel, Spinner } from './components';
 import { AircraftManagementProvider } from './context';
 import useInitialData from './hooks/useInitialData';
 import { useMemo } from 'react';
@@ -12,10 +7,7 @@ import { useMemo } from 'react';
 function App() {
   const { flights, aircraft, isLoading } = useInitialData();
 
-  const tomorrow = useMemo(
-    () => format(addDays(new Date(), 1), 'do MMMM yyyy'),
-    []
-  );
+  const tomorrow = useMemo(() => format(addDays(new Date(), 1), 'do MMMM yyyy'), []);
 
   return (
     <div className="flex flex-col justify-center items-center pt-4">

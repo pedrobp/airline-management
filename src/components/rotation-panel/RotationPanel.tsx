@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { Card, FlightCardContent, StackContainer } from '..';
+import { Card, FlightCardContent } from '..';
 import { useAircraftManagement } from '../../hooks/useAircraftManagement';
 import AircraftTimeline from './AircraftTimeline';
 import { useCallback, useMemo, useState } from 'react';
@@ -16,32 +16,23 @@ function RotationPanel() {
   const subsequentialFlights = useMemo(() => {
     if (!activeAircraft) return [];
 
-    const removedFlightIndex = activeAircraft.rotation.findIndex(
-      (f) => flightToRemove?.ident === f.ident
-    );
-    return activeAircraft.rotation.slice(
-      removedFlightIndex + 1,
-      activeAircraft.rotation.length
-    );
+    const removedFlightIndex = activeAircraft.rotation.findIndex((f) => flightToRemove?.ident === f.ident);
+    return activeAircraft.rotation.slice(removedFlightIndex + 1, activeAircraft.rotation.length);
   }, [activeAircraft, flightToRemove?.ident]);
 
   const handleConfirm = useCallback(() => {
     if (!flightToRemove) return;
 
-    removeFlights([
-      flightToRemove.ident,
-      ...subsequentialFlights.map((f) => f.ident),
-    ]);
+    removeFlights([flightToRemove.ident, ...subsequentialFlights.map((f) => f.ident)]);
     setFlightToRemove(null);
   }, [flightToRemove, removeFlights, subsequentialFlights]);
 
   return (
     <div className="grid-column">
-      <StackContainer
-        title="Rotation"
-        subtitle={activeAircraft?.ident}
-        className="h-[600px] xl:h-[73vh]"
-      >
+      <div className="grid-column-title">
+        <h1>Rotation {activeAircraft?.ident}</h1>
+      </div>
+      <div className="scrollable-container h-[600px] xl:h-[66vh]">
         <AnimatePresence>
           {activeAircraft?.rotation.length ? (
             activeAircraft.rotation.map((f) => (
@@ -52,11 +43,7 @@ function RotationPanel() {
                 exit={INITIAL_ANIMATION}
                 transition={{ duration: 0.2 }}
               >
-                <Card
-                  title="Flight"
-                  subtitle={f.ident}
-                  onClick={() => setFlightToRemove(f)}
-                >
+                <Card title="Flight" subtitle={f.ident} onClick={() => setFlightToRemove(f)}>
                   <FlightCardContent flight={f} />
                 </Card>
               </motion.div>
@@ -64,13 +51,11 @@ function RotationPanel() {
           ) : (
             <span className="text-center grid place-content-center h-full">
               No active flights were assigned for this aircraft yet.
-              <span className="text-sm text-secondary">
-                Click on a flight to add it to this rotation →
-              </span>
+              <span className="text-sm text-secondary">Click on a flight to add it to this rotation →</span>
             </span>
           )}
         </AnimatePresence>
-      </StackContainer>
+      </div>
 
       <AircraftTimeline />
 

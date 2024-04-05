@@ -10,7 +10,6 @@ export default {
         border: '#D0D0D0',
         background: '#D0D0D0',
         hover: 'rgba(0, 0, 0, 0.04)',
-        'border-light': '#e7e7e7',
       },
     },
   },

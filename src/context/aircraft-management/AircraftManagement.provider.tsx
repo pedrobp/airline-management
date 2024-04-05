@@ -1,7 +1,7 @@
-import { PropsWithChildren, useCallback, useMemo, useState } from "react";
-import { AircraftManagement } from "..";
-import { last } from "lodash";
-import { Aircraft, Flight, Rotation } from "../../types";
+import { PropsWithChildren, useCallback, useMemo, useState } from 'react';
+import { AircraftManagement } from '..';
+import { last } from 'lodash';
+import { Aircraft, Flight, Rotation } from '../../types';
 
 interface ProviderProps {
   aircraft: Aircraft[];
@@ -11,15 +11,9 @@ interface ProviderProps {
 export const TURNAROUND_TIME = 20 * 60;
 export const DAY_IN_SECONDS = 24 * 60 * 60;
 
-function AircraftManagementProvider({
-  flights,
-  aircraft,
-  children,
-}: PropsWithChildren<ProviderProps>) {
+function AircraftManagementProvider({ flights, aircraft, children }: PropsWithChildren<ProviderProps>) {
   const [rotation, setRotation] = useState<Rotation>({});
-  const [activeAircraftId, setActiveAircraftId] = useState(
-    aircraft.length ? aircraft[0].ident : null
-  );
+  const [activeAircraftId, setActiveAircraftId] = useState(aircraft.length ? aircraft[0].ident : null);
 
   const activeAircraft = useMemo(() => {
     const activeAircraft = aircraft.find((a) => a.ident === activeAircraftId);
@@ -28,27 +22,21 @@ function AircraftManagementProvider({
 
     return {
       ...activeAircraft,
-      rotation: activeFlightIds.map(
-        (id) => flights.find((f) => f.ident === id)!
-      ),
+      rotation: activeFlightIds.map((id) => flights.find((f) => f.ident === id)!),
     };
   }, [activeAircraftId, aircraft, flights, rotation]);
 
   const canAddFlight = useCallback(
     (flight: Flight) => {
       const alreadyBooked = Object.values(rotation).flat();
-      const lastFlight =
-        activeAircraft?.rotation && last(activeAircraft.rotation);
+      const lastFlight = activeAircraft?.rotation && last(activeAircraft.rotation);
 
       if (alreadyBooked.includes(flight.ident)) return false;
       if (!lastFlight) return true;
 
-      return (
-        lastFlight.arrivaltime + TURNAROUND_TIME < flight.departuretime &&
-        lastFlight.destination === flight.origin
-      );
+      return lastFlight.arrivaltime + TURNAROUND_TIME < flight.departuretime && lastFlight.destination === flight.origin;
     },
-    [activeAircraft?.rotation, rotation]
+    [activeAircraft?.rotation, rotation],
   );
 
   const addFlight = useCallback(
@@ -63,7 +51,7 @@ function AircraftManagementProvider({
         }));
       }
     },
-    [activeAircraft, rotation]
+    [activeAircraft, rotation],
   );
 
   const removeFlights = useCallback(
@@ -74,13 +62,11 @@ function AircraftManagementProvider({
       if (currentRotation) {
         setRotation((prev) => ({
           ...prev,
-          [activeAircraft.ident]: currentRotation.filter(
-            (r) => !flightIds.includes(r)
-          ),
+          [activeAircraft.ident]: currentRotation.filter((r) => !flightIds.includes(r)),
         }));
       }
     },
-    [activeAircraft, rotation]
+    [activeAircraft, rotation],
   );
 
   return (

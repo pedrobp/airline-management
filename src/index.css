@@ -19,30 +19,32 @@ ul {
 
 @layer base {
   h1 {
-    @apply font-semibold text-2xl text-primary; 
+    @apply font-semibold text-2xl text-primary;
   }
   h2 {
-    @apply font-semibold text-xl text-secondary; 
+    @apply font-semibold text-xl text-secondary;
   }
   h3 {
     @apply font-semibold text-lg text-secondary;
   }
-  
 }
 
-.container-layout {
-  @apply border border-border shadow-sm px-4 py-3 xl:px-6 xl:py-4 flex flex-col gap-6 rounded-md;
+.card-layout {
+  @apply border border-border px-4 py-3 xl:px-6 xl:py-4 flex flex-col gap-6 rounded-md;
 }
 
 .main-grid {
-  @apply grid grid-cols-1 gap-10 xl:p-2 w-full max-w-[550px] xl:max-w-none xl:grid-cols-[minmax(410px,_475px)_minmax(450px,_525px)_minmax(410px,_475px)] place-content-center;
+  @apply grid grid-cols-1 gap-10 w-full max-w-[550px] xl:max-w-none xl:grid-cols-[minmax(410px,_475px)_minmax(450px,_525px)_minmax(410px,_475px)] place-content-center;
 }
 
 .grid-column {
   @apply flex flex-col gap-4 p-2;
 }
 
-.scrollable-container {
-  @apply h-[600px] overflow-auto grid-column xl:h-[75vh] pb-0 border border-border-light rounded-md shadow-inner
+.grid-column-title {
+  @apply flex justify-center xl:pt-2 items-center gap-2;
 }
 
+.scrollable-container {
+  @apply h-[600px] overflow-auto flex flex-col gap-4 p-2 xl:p-6 xl:h-[75vh] pb-0 border border-border rounded-md;
+}
