@@ -50,6 +50,7 @@ function AircraftPanel() {
       <Tooltip anchorSelect=".tt-aircraft" place="top">
         Available aircraft are displayed below.
         <br />
+        The bar shows how active the aircraft will be in 24h. <br />
         Click on an aircraft to see or change it's rotation.
       </Tooltip>
     </div>
