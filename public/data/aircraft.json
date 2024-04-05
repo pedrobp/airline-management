@@ -1,0 +1,38 @@
+[
+  {
+    "ident": "PR-P01",
+    "type": "A320",
+    "economySeats": 100,
+    "base": "EGKK"
+  },
+  {
+    "ident": "PR-P02",
+    "type": "A320",
+    "economySeats": 186,
+    "base": "EGKK"
+  },
+  {
+    "ident": "PR-P25",
+    "type": "A320",
+    "economySeats": 168,
+    "base": "EGKK"
+  },
+  {
+    "ident": "PR-P26",
+    "type": "A320",
+    "economySeats": 126,
+    "base": "EGKK"
+  },
+  {
+    "ident": "PR-P27",
+    "type": "A320",
+    "economySeats": 186,
+    "base": "EGKK"
+  },
+  {
+    "ident": "PR-P28",
+    "type": "A320",
+    "economySeats": 186,
+    "base": "EGKK"
+  }
+]

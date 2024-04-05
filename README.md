@@ -4,8 +4,6 @@ This project is a single page application with the goal of managing an airline's
 
 The page consists of 3 columns: on the left, a list of all the available aircraft on the fleet; in the middle, the scheduled flight rotation for the selected aircraft and the aircraft's timeline; on the right, a list of all flights, whether they're available or not (unavailable flights become disabled).
 
-Data was fetched from the provided endpoints.
-
 Here's a preview of the page:
 
 ![Preview](./public/am-preview.png)
@@ -28,9 +26,9 @@ npm run dev
 
 ## 📜 Assumptions
 
-- Based on the endpoint provided data, all aircraft are based on "EGKK" (Gatwick Airport), but there're no flights departing from "EGKK", so I assumed the first flight of each aircraft have no departure airport constraints.
+- Based on the provided data, all aircraft are based on "EGKK" (Gatwick Airport), but there're no flights departing from "EGKK", so I assumed the first flight of each aircraft have no departure airport constraints.
 
-- Since the flights endpoint only return flights for a single day, and the documentation mentioned it could be simplified, it does not have multiple day support so far, but it would not be hard to implement.
+- Since the flights endpoint only return flights for a single day, it does not have multiple day support so far, but it would not be hard to implement.
 
 - Since there's no back-end or database, I assumed saving the data in-memory (with a React Context) was enough.
 
