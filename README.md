@@ -1,4 +1,4 @@
-# Aircraft Scheduling Project - React + Vite + TS
+# ✈️ Aircraft Scheduling Project - React + Vite + TS + Tailwind
 
 This project is a single page application with the goal of managing an airline's fleet and each aircraft's flight rotation.
 
@@ -10,7 +10,7 @@ Here's a preview of the page:
 
 ![Preview](./public/am-preview.png)
 
-## How to Run
+## 💻 How to Run
 
 1. Install the dependencies:
 
@@ -26,7 +26,7 @@ npm run dev
 
 3. Application will be ready at [http://localhost:5173/](http://localhost:5173/).
 
-## Assumptions
+## 📜 Assumptions
 
 - Based on the endpoint provided data, all aircraft are based on "EGKK" (Gatwick Airport), but there're no flights departing from "EGKK", so I assumed the first flight of each aircraft have no departure airport constraints.
 
@@ -34,15 +34,15 @@ npm run dev
 
 - Since there's no back-end or database, I assumed saving the data in-memory (with a React Context) was enough.
 
-## Extra Features
+## 🌟 Extra Features
 
-- **Responsive Design:** the application is ready and optimized for mobile/smaller viewports.
+- 📱 **Responsive Design:** the application is ready and optimized for mobile/smaller viewports.
 
-- **UI Animations:** card lists, loading state, dialogs and percentage bars all have smooth transitions and animations.
+- ✨ **UI Animations:** card lists, loading state, dialogs and percentage bars all have smooth transitions and animations.
 
-- **Interactive Tooltips:** tooltips were added to add guidance and information to the user.
+- 👁️‍🗨️ **Interactive Tooltips:** tooltips were added to add guidance and information to the user.
 
-## Helper Libraries
+## 🖋️ Helper Libraries
 
 - **Lucide Icons:** simple and beautiful icons to enhance the UI.
 
